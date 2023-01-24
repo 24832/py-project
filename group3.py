@@ -29,6 +29,13 @@ inpFCritical              = 3.1 # replace this value with what you collect with 
 invpd_treshold            = 0.5 # replace this value with what you collect with your API
 innext24h_rain_treshold   = 2 # replace this value with what you collect with your API
 
+inLat                     = float(input('Latitude='))
+inLon                     = float(input('Longitude='))
+inSoilType                = str(input('Soil Type Number='))
+inpFCritical              = float(input('pFCritical='))
+invpd_treshold            = float(input('VPD Treshold='))
+innext24h_rain_treshold   = float(input('Rain Treshold ='))
+
 # 2 - Create a dictionary of weather forecast with the group1 work. In the meantime you can use materials.Output1Group1 as a mockup result
 Forecast = materials.Output1Group1
 
