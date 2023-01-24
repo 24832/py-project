@@ -1,4 +1,7 @@
 #Grupo 1
+# Group1 is responsible to provide a dictionary with weather forecast for the endpoint
+# an example of the output is provided in material.Output1Group1
+
 import requests
 import json
 
