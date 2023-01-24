@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import (MultipleLocator)
 import numpy as np
-import group1, group2
-import material
+import group1_output
+import group2_output
+import materials
 #The endpoint (Group 3) develops an API to collect data from user with argparse:
 #Latitude - in decimal degrees
 #Longitude - in decimal degrees
@@ -28,8 +29,8 @@ inpFCritical              = 3.1 # replace this value with what you collect with 
 invpd_treshold            = 0.5 # replace this value with what you collect with your API
 innext24h_rain_treshold   = 2 # replace this value with what you collect with your API
 
-# 2 - Create a dictionary of weather forecast with the group1 work. In the meantime you can use material.Output1Group1 as a mockup result
-Forecast = material.Output1Group1
+# 2 - Create a dictionary of weather forecast with the group1 work. In the meantime you can use materials.Output1Group1 as a mockup result
+Forecast = materials.Output1Group1
 
 # 3 - Organize your data series
 dates = Forecast['hourly']['time']
