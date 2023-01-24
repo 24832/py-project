@@ -22,11 +22,11 @@ Output1Group1 = {"latitude":37.64,"longitude":-7.6600003,"generationtime_ms":1.3
 }
 
 # extract soil_moisture from dictionay to list
-VWC_3_9 =Output1Group1['hourly']['soil_moisture_3_9cm']
-# print (VWC_3_9)
+SoilMoisture_3_9 =Output1Group1['hourly']['soil_moisture_3_9cm']
+# print (SoilMoisture_3_9)
 
-VWC_9_27 =Output1Group1['hourly']['soil_moisture_9_27cm']
-# print(VWC_9_27)
+SoilMoisture_9_27 =Output1Group1['hourly']['soil_moisture_9_27cm']
+# print(SoilMoisture_9_27)
 
 #dictionary of values from soils
 soils={
@@ -59,7 +59,7 @@ def get_pF(Theta, alpha, Thetar, Thetas,nSoil):
     return pF
 
 
-def get_pF_forecast(VWC,soilType):
+def get_pF_forecast(SoilMoisture,soilType):
     """calculates soil tension (pF) for a given list of Volumetric Water Content and soil type
 
     Args:
@@ -77,7 +77,7 @@ def get_pF_forecast(VWC,soilType):
     Thetas = float(soils[soilType]['thetas'])
     nSoil = float(soils[soilType]['nsoil'])
 
-    for water_content in VWC_3_9:
+    for water_content in SoilMoisture_3_9:
         pF=get_pF(water_content, alpha, Thetar, Thetas, nSoil)
         soil_pF.append(pF)
 
@@ -91,4 +91,4 @@ def get_pF_forecast(VWC,soilType):
 
 #can print multiple lists if needed
 
-print(get_pF_forecast(VWC_3_9, "2"))
+print(get_pF_forecast(SoilMoisture_3_9, "2"))
