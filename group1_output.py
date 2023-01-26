@@ -47,4 +47,4 @@ def getHourlyWeatherForescast(lat,lon):
      return Output1
 
 
-print(getHourlyWeatherForescast(52.52, 13.41))
+print(getHourlyWeatherForescast(37.64, -7.66))
