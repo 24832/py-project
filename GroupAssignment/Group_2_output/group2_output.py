@@ -92,3 +92,4 @@ def get_pF_forecast(SoilMoisture,soilType):
 #can print multiple lists if needed
 
 print(get_pF_forecast(SoilMoisture_3_9, "2"))
+
