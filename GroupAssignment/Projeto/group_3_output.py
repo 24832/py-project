@@ -3,8 +3,8 @@ from matplotlib.ticker import (MultipleLocator)
 import numpy as np
 import material
 import argparse
-import group1_output
-import group2_output
+from group_1_output import getHourlyWeatherForescast
+from group_2_output import get_pF_forecast
 
 parser = argparse.ArgumentParser()
 parser.add_argument ("--latitude", type = float, required = True)
@@ -42,7 +42,7 @@ invpd_treshold            = args.vpd_treshold # replace this value with what you
 innext24h_rain_treshold   = args.next24rain_treshold # replace this value with what you collect with your API
 
 # 2 - Create a dictionary of weather forecast with the group1 work. In the meantime you can use material.Output1Group1 as a mockup result
-Forecast = group1_output.getHourlyWeatherForescast(inLat,inLon)
+Forecast = getHourlyWeatherForescast(inLat,inLon)
 
 # 3 - Organize your data series
 dates = Forecast['hourly']['time']
@@ -61,8 +61,8 @@ SoilMoisture_9_27 = SoilMoisture_9_27[:]
 
 # 4 Use group2 function to create the soil tension (pF) dataseries for the two soil layers. 
 
-pF_3_9= group2_output.get_pF_forecast(SoilMoisture_3_9, str(inSoilType)) # replace the empty list with result of group2 work
-pF_9_27= group2_output.get_pF_forecast(SoilMoisture_9_27, str(inSoilType)) # replace the empty list the list with result of group2 work
+pF_3_9= get_pF_forecast(SoilMoisture_3_9, str(inSoilType)) # replace the empty list with result of group2 work
+pF_9_27= get_pF_forecast(SoilMoisture_9_27, str(inSoilType)) # replace the empty list the list with result of group2 work
 
 #Decision to irrigate ( 3-9 cm)
 plan_3_9 = [0] * len(dates) # replace the empty list with a list with same nr elements as 'dates', but filled with zeros
