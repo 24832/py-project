@@ -87,9 +87,14 @@ def get_pF_forecast(SoilMoisture,soilType):
 # only needs to change these 2 variables to get the values
 
 #example
-# print(get_pF_forecast(VWC_9_27, "5"))
+#print(get_pF_forecast(SoilMoisture_3_9, "5"))
+#print(get_pF_forecast(SoilMoisture_9_27, "5"))
 
 #can print multiple lists if needed
 
-print(get_pF_forecast(SoilMoisture_3_9, "2"))
 
+''''
+x= (get_pF_forecast(SoilMoisture_3_9, "2"))
+for a in x:
+    print(a)
+'''

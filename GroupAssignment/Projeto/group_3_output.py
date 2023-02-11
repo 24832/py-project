@@ -7,12 +7,12 @@ from group_1_output import getHourlyWeatherForescast
 from group_2_output import get_pF_forecast
 
 parser = argparse.ArgumentParser()
-parser.add_argument ("--latitude", type = float, required = True)
-parser.add_argument ("--longitude", type = float, required = True)
-parser.add_argument ("--soiltype", type = int, required = True) 
-parser.add_argument ("--pFCritical", type = float, required = True)
-parser.add_argument ("--next24rain_treshold", type = float, required = True)
-parser.add_argument ("--vpd_treshold", type = float, required = True)
+parser.add_argument ("--lat", type = float, required = True) #latitude
+parser.add_argument ("--long", type = float, required = True) #longitude
+parser.add_argument ("--st", type = int, required = True) #soiltype
+parser.add_argument ("--pfc", type = float, required = True) #pFCritical 
+parser.add_argument ("--nr24", type = float, required = True) #next24rain_treshold
+parser.add_argument ("--vpd", type = float, required = True) #vpd_treshold
 
 args = parser.parse_args()
 
@@ -34,12 +34,12 @@ args = parser.parse_args()
 
 # 1 -Organize your user input data for easier reading
 
-inLat                     = args.latitude # replace this value with what you collect with your API
-inLon                     = args.longitude # replace this value with what you collect with your API
-inSoilType                = args.soiltype # replace this value with what you collect with your API
-inpFCritical              = args.pFCritical # replace this value with what you collect with your API
-invpd_treshold            = args.vpd_treshold # replace this value with what you collect with your API
-innext24h_rain_treshold   = args.next24rain_treshold # replace this value with what you collect with your API
+inLat                     = args.lat # replace this value with what you collect with your API
+inLon                     = args.long # replace this value with what you collect with your API
+inSoilType                = args.st # replace this value with what you collect with your API
+inpFCritical              = args.pfc # replace this value with what you collect with your API
+invpd_treshold            = args.vpd # replace this value with what you collect with your API
+innext24h_rain_treshold   = args.nr24 # replace this value with what you collect with your API
 
 # 2 - Create a dictionary of weather forecast with the group1 work. In the meantime you can use material.Output1Group1 as a mockup result
 Forecast = getHourlyWeatherForescast(inLat,inLon)
@@ -157,3 +157,7 @@ plt.tight_layout()
 # adding legend to the curves
 plt.legend()
 plt.show()
+
+
+#to run it in terminal: 
+#python3 /Users/diogopinto/Documents/ISA_22_23/Python/py-project/py-project/GroupAssignment/Projeto/group_3_output.py --lat 37.64 --long -7.66 --st 3 --pfc 3.1 --nr24 2 --vpd 0.5
